@@ -41,7 +41,7 @@ cd src
 npm install
 npm start 
 ```
-No segundo terminal vamos configurar nosso server 
+No segundo terminal vamos configurar nosso server rodando na porta :3001
 ``` sh
 cd server
 npm install ( client e server)
