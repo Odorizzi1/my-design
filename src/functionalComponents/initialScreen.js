@@ -40,10 +40,6 @@ const InitialScreen = () => {
     })
   }
 
-  // function updateTask(){
-  //   axios.put("http://localhost:3001/update"[, data[, config]])
-  // }
-
   function onChangeTextField(params) {
     setUseTask(params)
     console.log(params)

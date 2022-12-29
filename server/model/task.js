@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const dataSchema = new mongoose.Schema({
-    title: String,
+  title: String,
 })
 
 const tasks = mongoose.model('Tasks', dataSchema)
