@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import CardSelector from "./CardSelector";
-import TextField from "./TextField";
-import Button from "./Button";
+import CardSelector from "../components/CardSelector";
+import TextField from "../components/TextField";
+import Button from "../components/Button";
 
 const InitialScreen = () => {
 

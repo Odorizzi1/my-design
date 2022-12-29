@@ -1,5 +1,5 @@
 .App-header {
-  background-color: rgb(251, 250, 250);
+  background-color: #ffe5d0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,11 +10,12 @@
 }
 
 .initial-screen{
+  overflow: auto;
   width: 30vw;
   height: 75vh;
   background-color: #ffffff;
   border-radius: 5px;
-  border: 4px solid #2df02d;
+  border: 4px solid #CEEDC7;
 }
 
 .add-button{
@@ -23,17 +24,18 @@
   border: none; 
   padding: 6px 15px 6px 15px;
   cursor: pointer;
+  background-color: #CEEDC7;
 }
 .button-hover:hover{
   transition: 1s;
-  background-color: #2df02d;
+  background-color: #86C8BC;
 }
 
 .textfield-first{
   width: 300px;
   height: 100%;
   border: none;
-  border-bottom: 2px solid #a0a0a0;
+  border-bottom: 2px solid #CEEDC7;
   outline: 0;
   
 }
@@ -44,12 +46,12 @@
   justify-content: space-between; 
   width: 94%; 
   height: 45px; 
-  border: 2px solid #a0a0a0;
+  border: 2px solid #CEEDC7;
   color: black; 
   margin-bottom: 10px; 
 }
 .content-insert__itens:hover{
-  border: 2px solid #2df02d;
+  border: 2px solid #86C8BC;
 }
 
 .content-insert__itens--buton_icon{
@@ -69,11 +71,11 @@ transition: 1s;
 }
 .textfield-first:focus{
   border: 0;
-  border-bottom:2px solid #2df02d 
+  border-bottom:2px solid #86C8BC
 }
 
 .textfield-first:focus ~ .textfield--label__style{
-  color: #2df02d;
+  color: #86C8BC;
   transform: translateY(-20px);
   font-size: 15px;
 }
@@ -83,7 +85,7 @@ transition: 1s;
   cursor: pointer;
 }
 .button-icon__style:hover{
-  color: #2df02d;
+  color:#86C8BC;
 }
 
 .containter-insert__itens{
