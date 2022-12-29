@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { O_TextField, O_Button, O_CardSelector, O_Modal } from "../components/component";
 import axios from 'axios'
+import CardSelector from "./CardSelector";
+import TextField from "./TextField";
+import Button from "./Button";
 
 const InitialScreen = () => {
 
@@ -48,12 +50,12 @@ const InitialScreen = () => {
   return (
     <div className="initial-screen">
       <div className="containter-insert__itens">
-        <O_TextField
+        <TextField
           label="Teste"
           onChange={(params) => onChangeTextField(params)}
           value={useTask}
         />
-        <O_Button
+        <Button
           label={"Criar"}
           onClick={() => createTask()}
         />
@@ -61,7 +63,7 @@ const InitialScreen = () => {
 
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
         {listTask?.map(res => {
-          return <O_CardSelector
+          return <CardSelector
             titleTask={res.title}
             onClickDelete={() => deleteTask(res._id)}
           />

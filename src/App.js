@@ -1,11 +1,12 @@
 import './App.css'
-import InitialScreen from './functionalComponents/initialScreen';
+import InitialScreen from './components/initialScreen';
+
 
 function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <InitialScreen />
+       <InitialScreen />
       </div>
 
      
