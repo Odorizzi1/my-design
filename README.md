@@ -8,7 +8,7 @@ Nessa aplicação eu pretendo que você encontre :
 - Qualidade de código
 - Padrão de design system
 - Qualidade de componentes
-- CSS responsivo e com animações sem uso de bibliotecas externas
+- CSS  sem uso de bibliotecas externas
 - CRUD funcional
 
 ## Ferramentas:
@@ -27,6 +27,7 @@ Nessa aplicação eu pretendo que você encontre :
 - Edição de tarefas
 - Modal podendo criar observações da tarefas
 - Aprimorar a arquitetura do sistema
+- Responsividade
 
 ## Instalação do repositório
 
