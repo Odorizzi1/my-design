@@ -33,18 +33,20 @@ Nessa aplicação eu pretendo que você encontre :
 Necessário  [Node.js](https://nodejs.org/) v10+ para rodar.
 Para executar o servidor é necessário passar as credenciais do seu acesso ao mongoDB no parâmetro da chamada da conexão com o banco.
 
-Para rodar o client e o server inicie 2 terminais
+Para rodar o server inicie um terminal que deverá rodar na porta :3001
+``` sh
+cd server
+npm install
+npm run dev
+```
+
+
+No segundo terminal vamos configurar nosso client rodando na porta :3001
 
 ```sh
 cd my-design
 cd src
 npm install
 npm start 
-```
-No segundo terminal vamos configurar nosso server rodando na porta :3001
-``` sh
-cd server
-npm install ( client e server)
-npm run dev
 ```
 Feito isso nossa aplicação já deve estar rodando! 
