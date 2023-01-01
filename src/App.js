@@ -5,10 +5,8 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-     <InitialScreen />
+        <InitialScreen />
       </div>
-
-     
     </div>
   );
 }

@@ -4,11 +4,14 @@ import CardSelector from "../components/CardSelector";
 import TextField from "../components/TextField";
 import Button from "../components/Button";
 
+// import { Help } from "../utils/help";
+
+
 const InitialScreen = () => {
 
   const [useTask, setUseTask] = useState('')
   const [listTask, setListTask] = useState([])
-
+  const [error, setError] = useState("")
   useEffect(() => {
     executeGet()
 
@@ -23,17 +26,22 @@ const InitialScreen = () => {
   }
 
   function createTask() {
-    axios({
-      method: 'post',
-      url: 'http://localhost:3001/taskCreate',
-      data: {
-        title: useTask,
+    if (useTask.length === 0) {
+      setError("É necessário inserir um texto!")
+    } else {
+      axios({
+        method: 'post',
+        url: 'http://localhost:3001/taskCreate',
+        data: {
+          title: useTask,
 
-      }
-    }).then(() => {
-      executeGet()
-      setUseTask("")
-    });
+        }
+      }).then(() => {
+        executeGet()
+        setUseTask("")
+      });
+    }
+
   }
 
   function deleteTask(_id) {
@@ -51,7 +59,8 @@ const InitialScreen = () => {
     <div className="initial-screen">
       <div className="containter-insert__itens">
         <TextField
-          label="Teste"
+          errorText={error}
+          label="Insira uma tarefa!"
           onChange={(params) => onChangeTextField(params)}
           value={useTask}
         />
@@ -66,7 +75,10 @@ const InitialScreen = () => {
           return <CardSelector
             titleTask={res.title}
             onClickDelete={() => deleteTask(res._id)}
-          />
+            onClickEdit={()=> console.log()
+            }
+              
+            />
         })
         }
       </div>
