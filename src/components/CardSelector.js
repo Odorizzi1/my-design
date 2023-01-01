@@ -3,7 +3,7 @@ import ModalEditable from "../pages/modalEditable";
 import ButtonIcon from "./ButtonIcon";
 
 
-const CardSelector = ({ titleTask, onClickDelete, onClickEdit }) => {
+const CardSelector = ({ titleTask, onClickDelete, onClickEdit,titleModal,infoCard }) => {
   const [modalOpen, setModalOpen] = useState(false)
   return (
     <>
@@ -12,11 +12,9 @@ const CardSelector = ({ titleTask, onClickDelete, onClickEdit }) => {
         setIsOpen={setModalOpen}
         close
         backDropClose={false}
-        title="Update"
+        title={titleModal}
       >
-        aqui dentro vai haver informação pra caralho aqui dentro vai haver informação pra caralho
-        aqui dentro vai haver informação pra caralho aqui dentro vai haver informação pra caralho
-        aqui dentro vai haver informação pra caralho aqui dentro vai haver informação pra caralho aqui dentro vai haver informação pra caralho
+        {infoCard}
 
       </ModalEditable>
       <div className="content-insert__itens">

@@ -1,5 +1,3 @@
-// import { useEffect } from "react"
-
 import Button from "../components/Button"
 
 const ModalEditable = ({ children, id = "modal", isOpen, setIsOpen, close = true, backDropClose, title }) => {
