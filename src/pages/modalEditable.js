@@ -1,5 +1,7 @@
 // import { useEffect } from "react"
 
+import Button from "../components/Button"
+
 const ModalEditable = ({ children, id = "modal", isOpen, setIsOpen, close = true, backDropClose, title }) => {
 
     if (!isOpen) {
@@ -19,13 +21,20 @@ const ModalEditable = ({ children, id = "modal", isOpen, setIsOpen, close = true
         <>
             <div id={id} className="backdrop" onClick={handleBackDropClick}>
                 <div className="modal">
-                   <div className="modal-title">
-                        <h2> {title}</h2>
-                   </div>
-                   
-                   
-                    {close ? <button className="modal-close" onClick={() => setIsOpen(false)} /> : null}
-                    {children}
+                    <div className="modal-title">
+                        {title}
+                    </div>
+                    <div className="modal-content">
+                        {close ? <button className="modal-close" onClick={() => setIsOpen(false)} /> : null}
+                        {children}
+                    </div>
+                    <div className="modal-button__ok">
+                        <Button
+                            className={"modal-button--ok__style"}
+                            label="Ok"
+                        />
+                    </div>
+
                 </div>
             </div>
         </>

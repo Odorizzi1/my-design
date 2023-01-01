@@ -117,12 +117,36 @@ position: relative;
 .backdrop .modal{
   background-color: #e1e1e1;
   color: #1e1e1e;
-  padding: 2rem;
+  width: 30vw;
   border-radius: 0.75rem;
   max-width: 72vw;
   max-height: 90vw;
   position: relative;
 
+}
+.modal-title{
+  padding: 10px;
+  border-bottom: 2px solid  #afafaa;
+  font-weight: 600;
+}
+.button-add__style{
+  width: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+.modal-button--ok__style{
+  width: 60px;
+}
+
+.modal-button__ok{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 15px;
+}
+.modal-content{
+padding: 15px;
 }
 
 .backdrop .modal .modal-close{
@@ -161,4 +185,5 @@ position: relative;
   left: 0;
   top: calc(1.25rem/2);
 }
+
  

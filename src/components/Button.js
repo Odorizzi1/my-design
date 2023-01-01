@@ -1,17 +1,20 @@
 import React from "react"
 import Icons from "./Icons";
 
-const Button = ({ onClick, label }) => {
+const Button = ({ onClick, label, leftIcon,className }) => {
   return (
     <>
 
       <button
         className="add-button button-hover"
         onClick={onClick}>
-        <div style={{ width: "60px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div className={className}>
+          {leftIcon ? 
           <Icons
-            icon="add_circle"
-          />
+            icon={leftIcon}
+          /> : undefined
+          
+        }
           {label}
         </div>
       </button>

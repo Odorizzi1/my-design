@@ -65,6 +65,8 @@ const InitialScreen = () => {
           value={useTask}
         />
         <Button
+       className={"button-add__style"}
+       leftIcon="add_circle"
           label={"Criar"}
           onClick={() => createTask()}
         />
