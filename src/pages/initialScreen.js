@@ -9,6 +9,12 @@ import Button from "../components/Button";
 
 const InitialScreen = () => {
 
+
+  teste = [{
+    id: 1,
+    title: "testando123"
+  }]  
+
   const [useTask, setUseTask] = useState('')
   const [listTask, setListTask] = useState([])
   const [error, setError] = useState("")
@@ -80,7 +86,7 @@ const InitialScreen = () => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-        {listTask?.map(res => {
+        {teste.map(res => {
           return <CardSelector
             titleTask={res.title}
             onClickDelete={() => deleteTask(res._id)}
