@@ -18,7 +18,7 @@ const InitialScreen = () => {
   }, [])
 
   function executeGet() {
-    axios.get('https://my-design-npp5rx4tu-odorizzi1.vercel.app/task').then((res) => {
+    axios.get('http://localhost:3001/task').then((res) => {
       setListTask(res.data)
     }).catch((err) => {
       console.log(err)
@@ -31,11 +31,10 @@ const InitialScreen = () => {
     } else {
       axios({
         method: 'post',
-        url: 'https://my-design-npp5rx4tu-odorizzi1.vercel.app//taskCreate',
+        url: 'http://localhost:3001/taskCreate',
         data: {
           title: useTask,
-
-        }
+         }
       }).then(() => {
         executeGet()
         setUseTask("")
@@ -45,7 +44,7 @@ const InitialScreen = () => {
   }
 
   function deleteTask(_id) {
-    axios.delete(`https://my-design-npp5rx4tu-odorizzi1.vercel.app//${_id}`).then((res) => {
+    axios.delete(`http://localhost:3001/deleteTask/${_id}`).then((res) => {
       executeGet()
     })
   }
@@ -53,6 +52,14 @@ const InitialScreen = () => {
   function onChangeTextField(params) {
     setUseTask(params)
     console.log(params)
+  }
+
+  function teste(){
+    axios.get('http://localhost:3001/list').then((res) => {
+     console.log("chamou")
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   return (
@@ -84,6 +91,7 @@ const InitialScreen = () => {
           />
         })
         }
+        {/* <button onClick={()=> teste()}>TESTEEEEEE</button> */}
       </div>
     </div>
   )
