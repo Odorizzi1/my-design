@@ -18,7 +18,7 @@ const InitialScreen = () => {
   }, [])
 
   function executeGet() {
-    axios.get('http://localhost:3001/task').then((res) => {
+    axios.get('https://my-design-npp5rx4tu-odorizzi1.vercel.app/task').then((res) => {
       setListTask(res.data)
     }).catch((err) => {
       console.log(err)
@@ -31,7 +31,7 @@ const InitialScreen = () => {
     } else {
       axios({
         method: 'post',
-        url: 'http://localhost:3001/taskCreate',
+        url: 'https://my-design-npp5rx4tu-odorizzi1.vercel.app//taskCreate',
         data: {
           title: useTask,
 
@@ -45,7 +45,7 @@ const InitialScreen = () => {
   }
 
   function deleteTask(_id) {
-    axios.delete(`http://localhost:3001/deleteTask/${_id}`).then((res) => {
+    axios.delete(`https://my-design-npp5rx4tu-odorizzi1.vercel.app//${_id}`).then((res) => {
       executeGet()
     })
   }
