@@ -18,7 +18,7 @@ const InitialScreen = () => {
   }, [])
 
   function executeGet() {
-    axios.get('https://my-design-six.vercel.app/task').then((res) => {
+    axios.get('http://localhost:3001/task').then((res) => {
       setListTask(res.data)
     }).catch((err) => {
       console.log(err)
@@ -31,7 +31,7 @@ const InitialScreen = () => {
     } else {
       axios({
         method: 'post',
-        url: 'https://my-design-six.vercel.app/taskCreate',
+        url: 'http://localhost:3001/taskCreate',
         data: {
           title: useTask,
          }
@@ -44,7 +44,7 @@ const InitialScreen = () => {
   }
 
   function deleteTask(_id) {
-    axios.delete(`https://my-design-six.vercel.app/deleteTask/${_id}`).then((res) => {
+    axios.delete(`http://localhost:3001/deleteTask/${_id}`).then((res) => {
       executeGet()
     })
   }
