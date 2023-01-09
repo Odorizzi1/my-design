@@ -3,6 +3,7 @@ import axios from 'axios'
 import CardSelector from "../components/CardSelector";
 import TextField from "../components/TextField";
 import Button from "../components/Button";
+import { utilsHelper } from "../utils/utilsHelper";
 
 // import { Help } from "../utils/help";
 
@@ -18,48 +19,28 @@ const InitialScreen = () => {
   }, [])
 
   function executeGet() {
-    axios.get('http://localhost:3001/task').then((res) => {
-      setListTask(res.data)
-    }).catch((err) => {
-      console.log(err)
-    })
+    utilsHelper.beGet('http://localhost:3001/task', (res) => setListTask(res.data))
   }
 
   function createTask() {
     if (useTask.length === 0) {
       setError("É necessário inserir um texto!")
     } else {
-      axios({
-        method: 'post',
-        url: 'http://localhost:3001/taskCreate',
-        data: {
-          title: useTask,
-         }
-      }).then(() => {
+      utilsHelper.bePost('http://localhost:3001/taskCreate', { title: useTask }, () => {
         executeGet()
         setUseTask("")
-      });
+      })
     }
 
   }
 
   function deleteTask(_id) {
-    axios.delete(`http://localhost:3001/deleteTask/${_id}`).then((res) => {
-      executeGet()
-    })
+    utilsHelper.beDelete(`http://localhost:3001/deleteTask/${_id}`,{}, () => executeGet())
   }
 
   function onChangeTextField(params) {
     setUseTask(params)
     console.log(params)
-  }
-
-  function teste(){
-    axios.get('http://localhost:3001/list').then((res) => {
-     console.log("chamou")
-    }).catch((err) => {
-      console.log(err)
-    })
   }
 
   return (
@@ -86,7 +67,7 @@ const InitialScreen = () => {
             onClickDelete={() => deleteTask(res._id)}
             onClickEdit={() => console.log()}
             titleModal={res.title}
-            infoCard = {"Observações a ser criadas"}
+            infoCard={"Observações a ser criadas"}
 
           />
         })
