@@ -11,9 +11,9 @@ const CardSelector = ({ titleTask, onClickDelete, onClickEdit, titleModal, infoC
       <Modal
         show={modalOpen}
         closeModal={() => setModalOpen(false)}
+        children={infoCard}
       >
-        {infoCard}
-
+      
       </Modal>
       <div className="content-insert__itens">
         <span style={{ marginLeft: "5px", display: "flex", alignItems: "center", fontSize: "15px" }}>{titleTask}</span>

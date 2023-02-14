@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
 
-function Modal({ show, closeModal }) {
+function Modal({ show, closeModal, children }) {
   // const [show, setShow] = useState(false);
   const [modalClass, setModalClass] = useState('');
 
@@ -17,7 +17,11 @@ function Modal({ show, closeModal }) {
     <>
       <div className={modalClass}>
         <div className="modal">
-          <p>Modal Content</p>
+          <div style={{ color: "black" }}>
+            {children}
+
+          </div>
+
           <Button
             onClick={() => closeModal()}
             label="Fechar"
