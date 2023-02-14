@@ -1,22 +1,20 @@
 import React, { useState } from "react";
-import ModalEditable from "../pages/modalEditable";
+import Modal from "../pages/Modal";
+
 import ButtonIcon from "./ButtonIcon";
 
 
-const CardSelector = ({ titleTask, onClickDelete, onClickEdit,titleModal,infoCard }) => {
+const CardSelector = ({ titleTask, onClickDelete, onClickEdit, titleModal, infoCard }) => {
   const [modalOpen, setModalOpen] = useState(false)
   return (
     <>
-      <ModalEditable
-        isOpen={modalOpen}
-        setIsOpen={setModalOpen}
-        close
-        backDropClose={false}
-        title={titleModal}
+      <Modal
+        show={modalOpen}
+        closeModal={() => setModalOpen(false)}
       >
         {infoCard}
 
-      </ModalEditable>
+      </Modal>
       <div className="content-insert__itens">
         <span style={{ marginLeft: "5px", display: "flex", alignItems: "center", fontSize: "15px" }}>{titleTask}</span>
         <div className="content-insert__itens--buton_icon">
