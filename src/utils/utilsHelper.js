@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const utilsHelper = {
     bePost(url, sendData, successFunction) {
         axios({
@@ -22,11 +23,15 @@ export const utilsHelper = {
             }
         })
     },
-    beDelete(url,sendData,successFunction){
-        axios.delete(url).then((res)=>{
-           if(res.status == 200){
-            successFunction()
-           }
+    beDelete(url, sendData, successFunction) {
+        axios.delete(url).then((res) => {
+            if (res.status == 200) {
+                successFunction()
+            }
         })
-    }
+    },
+    showAlert(message) {
+        alert(message);
+    },
+
 }

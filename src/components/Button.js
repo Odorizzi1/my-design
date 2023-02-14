@@ -1,11 +1,12 @@
 import React from "react"
 import Icons from "./Icons";
 
-const Button = ({ onClick, label, leftIcon,className }) => {
+const Button = ({ onClick, label, leftIcon,className,disabled }) => {
   return (
     <>
 
       <button
+        disabled = {disabled}
         className="add-button button-hover"
         onClick={onClick}>
         <div className={className}>

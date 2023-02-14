@@ -4,6 +4,7 @@ import CardSelector from "../components/CardSelector";
 import TextField from "../components/TextField";
 import Button from "../components/Button";
 import { utilsHelper } from "../utils/utilsHelper";
+import Tooltip from "../components/Tooltip";
 
 // import { Help } from "../utils/help";
 
@@ -31,11 +32,10 @@ const InitialScreen = () => {
         setUseTask("")
       })
     }
-
   }
 
   function deleteTask(_id) {
-    utilsHelper.beDelete(`http://localhost:3001/deleteTask/${_id}`,{}, () => executeGet())
+    utilsHelper.beDelete(`http://localhost:3001/deleteTask/${_id}`, {}, () => executeGet())
   }
 
   function onChangeTextField(params) {
@@ -52,12 +52,17 @@ const InitialScreen = () => {
           onChange={(params) => onChangeTextField(params)}
           value={useTask}
         />
+        <Tooltip message={"teste"}>
         <Button
+          disabled={useTask.length == 0}
           className={"button-add__style"}
           leftIcon="add_circle"
           label={"Criar"}
-          onClick={() => createTask()}
+          onClick={() =>
+            createTask()}
         />
+
+        </Tooltip>
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
