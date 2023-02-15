@@ -8,7 +8,6 @@ Nessa aplicação eu pretendo que você encontre :
 - Qualidade de código
 - Padrão de design system
 - Qualidade de componentes
-- CSS  sem uso de bibliotecas externas
 - CRUD funcional
 
 ## Ferramentas:
