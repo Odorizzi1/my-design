@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-const ButtonOutlined = () => {
+const ButtonOutlined = ({ label, onClick, disabled }) => {
     return (
-        <Button variant="outlined">Outlined</Button>
+        <Button disabled={disabled} onClick={() => onClick} variant="outlined">{label}</Button>
     );
 }
 

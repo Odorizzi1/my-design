@@ -2,10 +2,10 @@ import React from 'react';
 
 import Button from '@mui/material/Button';
 
-const ButtonFlat = () => {
+const ButtonFlat = ({ label, onClick, disabled }) => {
     return (
 
-        <Button variant="text"> Button Flat</Button>
+        <Button disabled={disabled} onClick={() => onClick} variant="text"> {label}</Button>
 
     );
 }

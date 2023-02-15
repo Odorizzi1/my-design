@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-const ButtonPrimary = ({ label, onClick }) => {
+const ButtonPrimary = ({ label, onClick, disabled }) => {
     return (
-        <Button onClick={() => onClick} variant="contained">{label}</Button>
+        <Button disabled={disabled} onClick={() => onClick} variant="contained">{label}</Button>
     );
 }
 

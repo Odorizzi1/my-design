@@ -1,19 +1,28 @@
 import React from "react";
+import NavBar from "../components/NavBar";
 import ButtonPrimary from "../components/ButtonPrimary";
-import BasicButtons from "../components/ButtonFlat";
 import ButtonOutlined from "../components/ButtonOutlined";
 import ButtonFlat from "../components/ButtonFlat";
 
 const LoginScreen = () => {
     return (
         <div>
-            <ButtonPrimary
+          <NavBar />
+        <div>
+               <ButtonPrimary
                 label="Primary Button"
             />
-            <ButtonOutlined />
+            <ButtonOutlined
+                label="Button Outlined"
+            />
 
-            <ButtonFlat />
+            <ButtonFlat
+            label = "Button Flat"
+            />
         </div>
+       
+        </div>
+
     )
 }
 
